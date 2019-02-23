@@ -1,5 +1,6 @@
 {
   "name": "mael",
+  "homepage" : "http://lou.github.io/mael",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
