@@ -1,6 +1,6 @@
 import React from 'react'
 
-const events = ({ events }) => {
+const events = ({ events, removeEvent }) => {
 
   let previousDate
 
@@ -25,14 +25,25 @@ const events = ({ events }) => {
                 </div>
               }
               <div className='event'>
-                <div>
+                <div style={{ marginRight: 15 }}>
                   {`${date.getHours()}`.padStart(2, 0)}h{`${date.getMinutes()}`.padStart(2, 0)}
                 </div>
-                <div>
+                <div style={{ width: '70%' }}>
                   {event.categories.map(category => category.label).join(', ')}
                 </div>
                 <div>
                   {event.duration && event.duration.label}
+                </div>
+                <div className='delete'
+                  onClick={
+                    () => {
+                      if (window.confirm("Supprimer l'évènement ?")) {
+                        removeEvent(index)
+                      }
+                    }
+                  }
+                >
+                  ×
                 </div>
               </div>
             </div>

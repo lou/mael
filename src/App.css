@@ -32,23 +32,6 @@ h1 img {
   min-width: 200px;
 }
 
-@media only screen and (max-width: 600px) {
-  .dates {
-    flex-direction: column;
-    padding-bottom: 0px;
-  }
-
-  .dates > * {
-    margin-bottom: 15px;
-    width: 100%;
-  }
-
-  .react-datepicker__input-container {
-    width: 100%;
-  }
-}
-
-
 * {
   box-sizing: border-box;
 }
@@ -80,8 +63,14 @@ button {
 .event {
   padding: 20px 0px;
   display: flex;
-  justify-content: space-between;
+  align-items: center;
 }
+
+.delete {
+  font-size: 24px;
+  margin-left: auto;
+}
+
 
 .day {
   text-align: center;
@@ -89,4 +78,20 @@ button {
   width: 100%;
   border-bottom: 1px #ddd solid;
   padding: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+  .dates {
+    flex-direction: column;
+    padding-bottom: 0px;
+  }
+
+  .dates > * {
+    margin-bottom: 15px;
+    width: 100%;
+  }
+
+  .react-datepicker__input-container {
+    width: 100%;
+  }
 }

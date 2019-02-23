@@ -19,9 +19,14 @@ const uniq = (array) => {
   return result
 }
 
+const remove = (arr, index) => {
+  return arr.slice(0,index).concat(arr.slice(index+1))
+}
+
 const App = () => {
   const [events, setEvents] = useState(JSON.parse(localStorage.getItem('events')) || [])
   const addEvent = event => setEvents([...events, event])
+  const removeEvent = index => setEvents(remove(events, index))
 
   const usedCategories = uniq(events.map(event => event.categories).flat())
 
@@ -38,7 +43,7 @@ const App = () => {
         </h1>
       </div>
       <AddEvent saveEvent={addEvent} usedCategories={usedCategories} />
-      <Events events={events} />
+      <Events events={events} removeEvent={removeEvent} />
     </div>
   )
 }

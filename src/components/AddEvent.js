@@ -48,6 +48,7 @@ const AddEvent = ({ saveEvent, usedCategories }) => {
           onChange={(duration) => setEvent(prevState => ({...prevState, duration }))}
           options={duration()}
           placeholder='Durée'
+          isClearable
           styles={{
             input: styles => ({
               ...styles,
