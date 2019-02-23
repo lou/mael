@@ -1,28 +1,46 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
 import './App.css';
+import AddEvent from './components/AddEvent'
+import Events from './components/Events'
+import logo from './logo.png'
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
+const uniq = (array) => {
+  const result = []
+  const map = new Map()
+  for (const item of array) {
+      if(!map.has(item.value)) {
+          map.set(item.value, true)
+          result.push({
+              value: item.value,
+              label: item.label
+          })
+      }
   }
+  return result
+}
+
+const App = () => {
+  const [events, setEvents] = useState(JSON.parse(localStorage.getItem('events')) || [])
+  const addEvent = event => setEvents([...events, event])
+
+  const usedCategories = uniq(events.map(event => event.categories).flat())
+
+  useEffect(() => {
+    localStorage.setItem('events', JSON.stringify(events))
+  })
+
+  return (
+    <div className="container">
+      <div className='header'>
+        <h1>
+          <img src={logo} width='28' height='28' alt='logo' />
+          Maël
+        </h1>
+      </div>
+      <AddEvent saveEvent={addEvent} usedCategories={usedCategories} />
+      <Events events={events} />
+    </div>
+  )
 }
 
 export default App;
