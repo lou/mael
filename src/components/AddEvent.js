@@ -32,6 +32,7 @@ const AddEvent = ({ saveEvent, usedCategories }) => {
           selected={event.date ? new Date(event.date) : null}
           placeholderText="C'était quand ?"
           dateFormat="d MMM YYYY"
+          withPortal
         />
         <DatePicker
           onChange={(startTime) => setEvent(prevState => ({...prevState, startTime: startTime ? startTime.toString() : null }))}
@@ -43,6 +44,7 @@ const AddEvent = ({ saveEvent, usedCategories }) => {
           dateFormat="HH:mm"
           timeFormat="HH:mm"
           timeCaption="Time"
+          withPortal
         />
         <Select
           onChange={(duration) => setEvent(prevState => ({...prevState, duration }))}
