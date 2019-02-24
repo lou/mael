@@ -9,6 +9,7 @@ const events = ({ events, removeEvent }) => {
       {
         events.sort((e1, e2) => new Date(e1.date) - new Date(e2.date)).reverse().map((event, index) => {
           const date = new Date(event.date)
+          const time = new Date(event.startTime)
           const currentDate = `${date.getDate()}${date.getMonth()}${date.getYear()}`
 
           const day = (currentDate !== previousDate) ?
@@ -26,7 +27,7 @@ const events = ({ events, removeEvent }) => {
               }
               <div className='event'>
                 <div style={{ marginRight: 15 }}>
-                  {`${date.getHours()}`.padStart(2, 0)}h{`${date.getMinutes()}`.padStart(2, 0)}
+                  {`${time.getHours()}`.padStart(2, 0)}h{`${time.getMinutes()}`.padStart(2, 0)}
                 </div>
                 <div style={{ width: '70%' }}>
                   {event.categories.map(category => category.label).join(', ')}
