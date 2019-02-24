@@ -1,16 +1,16 @@
 {
-  "main.css": "/mael/static/css/main.b865a565.chunk.css",
-  "main.js": "/mael/static/js/main.e3c1e974.chunk.js",
-  "main.js.map": "/mael/static/js/main.e3c1e974.chunk.js.map",
+  "main.css": "/mael/static/css/main.b5f79e19.chunk.css",
+  "main.js": "/mael/static/js/main.104e508b.chunk.js",
+  "main.js.map": "/mael/static/js/main.104e508b.chunk.js.map",
   "runtime~main.js": "/mael/static/js/runtime~main.10f64e82.js",
   "runtime~main.js.map": "/mael/static/js/runtime~main.10f64e82.js.map",
   "static/css/2.766c1acb.chunk.css": "/mael/static/css/2.766c1acb.chunk.css",
-  "static/js/2.0e65b85b.chunk.js": "/mael/static/js/2.0e65b85b.chunk.js",
-  "static/js/2.0e65b85b.chunk.js.map": "/mael/static/js/2.0e65b85b.chunk.js.map",
+  "static/js/2.bcf9afb4.chunk.js": "/mael/static/js/2.bcf9afb4.chunk.js",
+  "static/js/2.bcf9afb4.chunk.js.map": "/mael/static/js/2.bcf9afb4.chunk.js.map",
   "index.html": "/mael/index.html",
-  "precache-manifest.c020a1cbd63098b200f3d4c714557008.js": "/mael/precache-manifest.c020a1cbd63098b200f3d4c714557008.js",
+  "precache-manifest.71eb646cc8c8a9d0bc2e2db647dcf273.js": "/mael/precache-manifest.71eb646cc8c8a9d0bc2e2db647dcf273.js",
   "service-worker.js": "/mael/service-worker.js",
   "static/css/2.766c1acb.chunk.css.map": "/mael/static/css/2.766c1acb.chunk.css.map",
-  "static/css/main.b865a565.chunk.css.map": "/mael/static/css/main.b865a565.chunk.css.map",
+  "static/css/main.b5f79e19.chunk.css.map": "/mael/static/css/main.b5f79e19.chunk.css.map",
   "static/media/logo.png": "/mael/static/media/logo.2c69f090.png"
 }
