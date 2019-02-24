@@ -7,7 +7,7 @@ import Select from 'react-select'
 const duration = () => {
   return Array(11).fill().map((_, i) => {
     const minutes = (i+1)*5;
-    return ({ label: `${minutes} minutes`, value: minutes })
+    return ({ label: `${`${minutes}`.padStart(2, 0)} min`, value: minutes })
   })
 }
 
@@ -83,7 +83,7 @@ const AddEvent = ({ saveEvent, usedCategories }) => {
         usedCategories={usedCategories}
       />
       <button>
-        Valider
+        Créer un évènement
       </button>
     </form>
   );

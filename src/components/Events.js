@@ -25,14 +25,13 @@ const events = ({ events, removeEvent }) => {
                 </div>
               }
               <div className='event'>
-                <div style={{ marginRight: 15 }}>
+                <div style={{ marginRight: 15, flex: 'none', width: 100 }}>
                   {`${date.getHours()}`.padStart(2, 0)}h{`${date.getMinutes()}`.padStart(2, 0)}
+                  <br />
+                  <small style={{ color: '#999'}}>{event.duration && event.duration.label}</small>
                 </div>
-                <div style={{ width: '70%' }}>
+                <div className='categories'>
                   {event.categories.map(category => category.label).join(', ')}
-                </div>
-                <div>
-                  {event.duration && event.duration.label}
                 </div>
                 <div className='delete'
                   onClick={
