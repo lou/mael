@@ -7,7 +7,7 @@ const events = ({ events, removeEvent }) => {
   return (
     <div className='events'>
       {
-        events.map((event, index) => {
+        events.sort((e1, e2) => new Date(e1.date) - new Date(e2.date)).reverse().map((event, index) => {
           const date = new Date(event.date)
           const currentDate = `${date.getDate()}${date.getMonth()}${date.getYear()}`
 
