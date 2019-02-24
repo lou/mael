@@ -15,7 +15,6 @@ const AddEvent = ({ saveEvent, usedCategories }) => {
 
   const [event, setEvent] = useState({
     date: new Date().toString(),
-    startTime: new Date().toString(),
     categories: []
   })
 
@@ -35,8 +34,21 @@ const AddEvent = ({ saveEvent, usedCategories }) => {
           withPortal
         />
         <DatePicker
-          onChange={(startTime) => setEvent(prevState => ({...prevState, startTime: startTime ? startTime.toString() : null }))}
-          selected={event.startTime ? new Date(event.startTime) : null}
+          onChange={(startTime) => {
+            if (startTime) {
+              const date = new Date(event.date)
+              const time = new Date(startTime)
+              const newDate = new Date(
+                date.getFullYear(),
+                date.getMonth(),
+                date.getDate(),
+                time.getHours(),
+                time.getMinutes()
+              )
+              setEvent(prevState => ({...prevState, date: newDate }))
+            }
+          }}
+          selected={event.date ? new Date(event.date) : null}
           placeholderText="Heure de début"
           showTimeSelect
           showTimeSelectOnly
@@ -46,6 +58,7 @@ const AddEvent = ({ saveEvent, usedCategories }) => {
           timeCaption="Time"
           withPortal
         />
+        <div className='duration'>
         <Select
           onChange={(duration) => setEvent(prevState => ({...prevState, duration }))}
           options={duration()}
@@ -54,10 +67,15 @@ const AddEvent = ({ saveEvent, usedCategories }) => {
           styles={{
             input: styles => ({
               ...styles,
-              minWidth: 200
+              // width: 200
+            }),
+            container: styles => ({
+              ...styles,
+              width: '100%'
             })
           }}
         />
+        </div>
       </div>
       <Categories
         defaultValue={event.categories}

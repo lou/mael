@@ -28,8 +28,8 @@ h1 img {
   padding-bottom: 15px;
 }
 
-.react-datepicker-wrapper {
-  min-width: 200px;
+.react-datepicker-wrapper, .duration {
+  width: 180px;
 }
 
 * {
@@ -91,7 +91,7 @@ button {
     width: 100%;
   }
 
-  .react-datepicker__input-container {
+  .react-datepicker__input-container, .duration {
     width: 100%;
   }
 }
