@@ -8,6 +8,16 @@ const Categories = ({ onChange, defaultValue, usedCategories }) => (
     options={usedCategories}
     defaultValue={defaultValue}
     onChange={value => onChange(value)}
+    theme={(theme) => ({
+      ...theme,
+      borderRadius: 4,
+      colors: {
+      ...theme.colors,
+        neutral20: '#cfeeff',
+        neutral30: '#cfeeff',
+        primary: '#cfeeff',
+      },
+    })}
   />
 )
 

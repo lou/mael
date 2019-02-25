@@ -1,5 +1,20 @@
 import React from 'react'
 
+const displayDuration = (duration) => {
+  if (duration) {
+    // We need this for backward compatibility
+    // when duration was stored as an object { label: label, value: value }
+    const totalMinutes = duration.value || duration
+
+    const hours = Math.floor(totalMinutes / 60)
+    const minutes = totalMinutes % 60
+    let newDuration = `${minutes}min`
+    if (hours) newDuration = `${hours}h${newDuration}`
+
+    return `${newDuration}`
+  }
+}
+
 const events = ({ events, removeEvent }) => {
 
   let previousDate
@@ -28,7 +43,9 @@ const events = ({ events, removeEvent }) => {
                 <div style={{ marginRight: 15, flex: 'none', width: 100 }}>
                   {`${date.getHours()}`.padStart(2, 0)}h{`${date.getMinutes()}`.padStart(2, 0)}
                   <br />
-                  <small style={{ color: '#999'}}>{event.duration && event.duration.label}</small>
+                  <small style={{ color: '#999'}}>
+                    {displayDuration(event.duration)}
+                  </small>
                 </div>
                 <div className='categories'>
                   {event.categories.map(category => category.label).join(', ')}
