@@ -1,14 +1,14 @@
 {
-  "main.css": "/mael/static/css/main.d82ce0c1.chunk.css",
-  "main.js": "/mael/static/js/main.c890d5ed.chunk.js",
-  "main.js.map": "/mael/static/js/main.c890d5ed.chunk.js.map",
+  "main.css": "/mael/static/css/main.ba6447cb.chunk.css",
+  "main.js": "/mael/static/js/main.59edc66b.chunk.js",
+  "main.js.map": "/mael/static/js/main.59edc66b.chunk.js.map",
   "runtime~main.js": "/mael/static/js/runtime~main.10f64e82.js",
   "runtime~main.js.map": "/mael/static/js/runtime~main.10f64e82.js.map",
   "static/js/2.8b69da09.chunk.js": "/mael/static/js/2.8b69da09.chunk.js",
   "static/js/2.8b69da09.chunk.js.map": "/mael/static/js/2.8b69da09.chunk.js.map",
   "index.html": "/mael/index.html",
-  "precache-manifest.8ba2de1fa90130dc85720666decd8643.js": "/mael/precache-manifest.8ba2de1fa90130dc85720666decd8643.js",
+  "precache-manifest.52bd15ee2f3d88b2f748911b4dd7765a.js": "/mael/precache-manifest.52bd15ee2f3d88b2f748911b4dd7765a.js",
   "service-worker.js": "/mael/service-worker.js",
-  "static/css/main.d82ce0c1.chunk.css.map": "/mael/static/css/main.d82ce0c1.chunk.css.map",
+  "static/css/main.ba6447cb.chunk.css.map": "/mael/static/css/main.ba6447cb.chunk.css.map",
   "static/media/logo.png": "/mael/static/media/logo.2c69f090.png"
 }
