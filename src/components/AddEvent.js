@@ -26,9 +26,13 @@ const AddEvent = ({ saveEvent, userCategories }) => {
       <label><strong>Évènement</strong></label>
       <Categories
         defaultValue={event.categories}
-        onChange={categories => setEvent(prevState =>
-          ({...prevState, categories: categories.map(category => category.value) })
-        )}
+        onChange={categories => setEvent(prevState => {
+          return ({
+            ...prevState,
+            categories: categories.map(category => category.value),
+            boobs: categories.includes('head') ? [] : event.boobs
+          })
+        })}
         userCategories={userCategories}
       />
       {
