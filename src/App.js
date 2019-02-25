@@ -3,6 +3,7 @@ import './App.css';
 import AddEvent from './components/AddEvent'
 import Events from './components/Events'
 import logo from './logo.png'
+import { defaultCategoryValues } from './components/Categories'
 
 const uniq = (array) => {
   const result = []
@@ -27,8 +28,9 @@ const App = () => {
   const [events, setEvents] = useState(JSON.parse(localStorage.getItem('events')) || [])
   const addEvent = event => setEvents([...events, event])
   const removeEvent = index => setEvents(remove(events, index))
-
-  const usedCategories = uniq(events.map(event => event.categories).flat())
+  const userCategories = uniq(
+    events.map(event => event.categories).flat()
+  ).filter(category => !defaultCategoryValues.includes(category.value))
 
   useEffect(() => {
     localStorage.setItem('events', JSON.stringify(events))
@@ -42,7 +44,7 @@ const App = () => {
           Maël
         </h1>
       </div>
-      <AddEvent saveEvent={addEvent} usedCategories={usedCategories} />
+      <AddEvent saveEvent={addEvent} userCategories={userCategories} />
       <Events events={events} removeEvent={removeEvent} />
     </div>
   )

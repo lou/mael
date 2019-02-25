@@ -2,16 +2,19 @@ import React, { useState } from 'react'
 import Categories from './Categories'
 import DateSelect from './DateSelect'
 import DurationSelect from './DurationSelect'
+import Boobs from './Boobs'
 
-const AddEvent = ({ saveEvent, usedCategories }) => {
+const AddEvent = ({ saveEvent, userCategories }) => {
 
   const [event, setEvent] = useState({
     date: new Date().toString(),
-    categories: []
+    categories: [],
+    boobs: []
   })
 
   const [dateOpen, setDateOpen] = useState(false)
   let now = event.date ? new Date(event.date) : new Date()
+  const showBoobs = event.categories.map(category => category.value).includes('head')
 
   return (
     <form
@@ -24,8 +27,15 @@ const AddEvent = ({ saveEvent, usedCategories }) => {
       <Categories
         defaultValue={event.categories}
         onChange={categories => setEvent(prevState => ({...prevState, categories }))}
-        usedCategories={usedCategories}
+        userCategories={userCategories}
       />
+      {
+        showBoobs &&
+        <Boobs
+          defaultValue={event.boobs}
+          onChange={boobs => setEvent(prevState => ({...prevState, boobs }))}
+        />
+      }
       <label><strong>Durée</strong></label>
       <div className='duration'>
         <DurationSelect

@@ -16,6 +16,11 @@ const displayDuration = (duration) => {
   }
 }
 
+const boobs = {
+  left: 'Boob gauche',
+  right: 'Boob droit',
+}
+
 const events = ({ events, removeEvent }) => {
 
   let previousDate
@@ -50,7 +55,14 @@ const events = ({ events, removeEvent }) => {
                   </small>
                 </div>
                 <div className='categories'>
-                  {event.categories.map(category => category.label).join(', ')}
+                  {event.categories.map(category => {
+                    let ret = category.label
+
+                    if (event.boobs && event.boobs.length > 0) {
+                      ret += ` (${event.boobs.map(boob => boobs[boob]).join(', ')})`
+                    }
+                    return ret
+                  }).join(', ')}
                 </div>
                 <div className='delete'
                   onClick={

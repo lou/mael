@@ -1,11 +1,21 @@
 import React from 'react'
 import Select from 'react-select/lib/Creatable'
 
-const Categories = ({ onChange, defaultValue, usedCategories }) => (
+const defaultCategories = [
+  { value: 'head', label: 'Tétée' },
+  { value: 'urine', label: 'Pipi' },
+  { value: 'stools', label: 'Caca' },
+  { value: 'bath', label: 'Bain' },
+  { value: 'sleep', label: 'Dodo' }
+]
+
+export const defaultCategoryValues = defaultCategories.map(category => category.value)
+
+const Categories = ({ onChange, defaultValue, userCategories }) => (
   <Select
     isMulti
     isClearable={false}
-    options={usedCategories}
+    options={[...defaultCategories, ...userCategories]}
     defaultValue={defaultValue}
     onChange={value => onChange(value)}
     theme={(theme) => ({
