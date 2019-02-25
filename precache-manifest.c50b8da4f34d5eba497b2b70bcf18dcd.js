@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/mael/static/media/logo.2c69f090.png"
   },
   {
-    "revision": "44527553ffafdab523a3d998529fddb4",
+    "revision": "ab58ef5b94b7e61c6b3f71d42837f1f3",
     "url": "/mael/index.html"
   }
 ];
