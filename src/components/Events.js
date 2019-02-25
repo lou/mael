@@ -1,4 +1,5 @@
 import React from 'react'
+import { defaultCategories } from './Categories'
 
 const displayDuration = (duration) => {
   if (duration) {
@@ -56,8 +57,11 @@ const events = ({ events, removeEvent }) => {
                 </div>
                 <div className='categories'>
                   {event.categories.map(category => {
-                    let ret = category.label
+                    let ret = category
 
+                    if (defaultCategories.map(dc => dc.value).includes(category)) {
+                      ret = defaultCategories.filter(dc => dc.value === category)[0].label
+                    }
                     if (event.boobs && event.boobs.length > 0) {
                       ret += ` (${event.boobs.map(boob => boobs[boob]).join(', ')})`
                     }

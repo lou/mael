@@ -1,7 +1,7 @@
 import React from 'react'
 import Select from 'react-select/lib/Creatable'
 
-const defaultCategories = [
+export const defaultCategories = [
   { value: 'head', label: '🤱🏻Tétée' },
   { value: 'urine', label: '🧻 Pipi' },
   { value: 'stools', label: '💩Caca' },

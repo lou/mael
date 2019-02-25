@@ -14,7 +14,7 @@ const AddEvent = ({ saveEvent, userCategories }) => {
 
   const [dateOpen, setDateOpen] = useState(false)
   let now = event.date ? new Date(event.date) : new Date()
-  const showBoobs = event.categories.map(category => category.value).includes('head')
+  const showBoobs = event.categories.includes('head')
 
   return (
     <form
@@ -26,7 +26,9 @@ const AddEvent = ({ saveEvent, userCategories }) => {
       <label><strong>Évènement</strong></label>
       <Categories
         defaultValue={event.categories}
-        onChange={categories => setEvent(prevState => ({...prevState, categories }))}
+        onChange={categories => setEvent(prevState =>
+          ({...prevState, categories: categories.map(category => category.value) })
+        )}
         userCategories={userCategories}
       />
       {
