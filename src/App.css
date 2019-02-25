@@ -8,6 +8,10 @@ body {
   margin-bottom: 25px;
 }
 
+a {
+  color: #f97592;
+}
+
 h1 {
   margin-top: 0;
   font-size: 34px;

@@ -34,7 +34,7 @@ const DurationSelect = ({ selected, onChange }) => {
   })
 
   return (
-    <div className='dates' style={{ marginBottom: 15}}>
+    <div className='dates'>
       <select
         value={duration.hours || ''}
         onChange={(e) => {
