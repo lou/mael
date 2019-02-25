@@ -8,8 +8,9 @@ const displayDuration = (duration) => {
 
     const hours = Math.floor(totalMinutes / 60)
     const minutes = totalMinutes % 60
-    let newDuration = `${minutes}min`
-    if (hours) newDuration = `${hours}h${newDuration}`
+    let newDuration = ''
+    if (hours) newDuration = `${hours}h`
+    if (minutes) newDuration += `${minutes}min`
 
     return `${newDuration}`
   }
