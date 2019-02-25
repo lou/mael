@@ -24,12 +24,10 @@ const AddEvent = ({ saveEvent, usedCategories }) => {
         usedCategories={usedCategories}
       />
       <label>Date</label>
-      <div className='dates'>
-        <DateSelect
-          onChange={(date) => setEvent(prevState => ({...prevState, date: date ? date.toString() : null }))}
-          selected={event.date ? new Date(event.date) : null}
-        />
-      </div>
+      <DateSelect
+        onChange={(date) => setEvent(prevState => ({...prevState, date: date ? date.toString() : null }))}
+        selected={event.date ? new Date(event.date) : null}
+      />
       <label>Durée</label>
       <div className='duration'>
         <DurationSelect

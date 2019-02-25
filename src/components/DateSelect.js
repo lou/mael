@@ -67,55 +67,59 @@ const DateSelect = ({ selected, onChange }) => {
 
   return (
     <React.Fragment>
-      <select
-        value={date.day || ''}
-        onChange={(e) => {
-          e.persist()
-          setDate(prevState => ({ ...prevState, day: parseInt(e.target.value) }))
-        }}
-      >
-        {dayOptions}
-      </select>
-      /
-      <select
-        value={date.month ? date.month + 1 : ''}
-        onChange={(e) => {
-          e.persist()
-          setDate(prevState => ({ ...prevState, month: parseInt(e.target.value) }))
-        }}
-      >
-        {monthOptions}
-      </select>
-      /
-      <select
-        value={date.year || ''}
-        onChange={(e) => {
-          e.persist()
-          setDate(prevState => ({ ...prevState, year: parseInt(e.target.value) }))
-        }}
-      >
-        {yearOptions}
-      </select>
-      <select
-        value={date.hours || ''}
-        onChange={(e) => {
-          e.persist()
-          setDate(prevState => ({ ...prevState, hours: parseInt(e.target.value) }))
-        }}
-      >
-        {hourOptions}
-      </select>
-      h
-      <select
-        value={date.minutes || ''}
-        onChange={(e) => {
-          e.persist()
-          setDate(prevState => ({ ...prevState, minutes: parseInt(e.target.value) }))
-        }}
-      >
-        {minuteOptions}
-      </select>
-      min
+      <div className='dates'>
+        <select
+          value={date.day || ''}
+          onChange={(e) => {
+            e.persist()
+            setDate(prevState => ({ ...prevState, day: parseInt(e.target.value) }))
+          }}
+        >
+          {dayOptions}
+        </select>
+        <div className='separator'>/</div>
+        <select
+          value={date.month ? date.month + 1 : ''}
+          onChange={(e) => {
+            e.persist()
+            setDate(prevState => ({ ...prevState, month: parseInt(e.target.value) }))
+          }}
+        >
+          {monthOptions}
+        </select>
+        <div className='separator'>/</div>
+        <select
+          value={date.year || ''}
+          onChange={(e) => {
+            e.persist()
+            setDate(prevState => ({ ...prevState, year: parseInt(e.target.value) }))
+          }}
+        >
+          {yearOptions}
+        </select>
+      </div>
+      <div className='dates' style={{ marginTop: 10}}>
+        <select
+          value={date.hours || ''}
+          onChange={(e) => {
+            e.persist()
+            setDate(prevState => ({ ...prevState, hours: parseInt(e.target.value) }))
+          }}
+        >
+          {hourOptions}
+        </select>
+        <div className='separator'>h</div>
+        <select
+          value={date.minutes || ''}
+          onChange={(e) => {
+            e.persist()
+            setDate(prevState => ({ ...prevState, minutes: parseInt(e.target.value) }))
+          }}
+        >
+          {minuteOptions}
+        </select>
+        <div className='separator'>min</div>
+      </div>
     </React.Fragment>
   )
 }

@@ -34,7 +34,7 @@ const DurationSelect = ({ selected, onChange }) => {
   })
 
   return (
-    <div style={{ marginBottom: 15}}>
+    <div className='dates' style={{ marginBottom: 15}}>
       <select
         value={duration.hours || ''}
         onChange={(e) => {
@@ -44,7 +44,7 @@ const DurationSelect = ({ selected, onChange }) => {
       >
         {hourOptions}
       </select>
-      h&nbsp;
+      <div className='separator'>h</div>
       <select
         value={duration.minutes || ''}
         onChange={(e) => {
@@ -54,7 +54,7 @@ const DurationSelect = ({ selected, onChange }) => {
       >
         {minuteOptions}
       </select>
-      min
+      <div className='separator'>min</div>
     </div>
   )
 }

@@ -40,9 +40,10 @@ const events = ({ events, removeEvent }) => {
                 </div>
               }
               <div className='event'>
-                <div style={{ marginRight: 15, flex: 'none', width: 100 }}>
-                  {`${date.getHours()}`.padStart(2, 0)}h{`${date.getMinutes()}`.padStart(2, 0)}
-                  <br />
+                <div style={{ marginRight: 15, flex: 'none', width: 60 }}>
+                  <div className='date'>
+                    {`${date.getHours()}`.padStart(2, 0)}h{`${date.getMinutes()}`.padStart(2, 0)}
+                  </div>
                   <small style={{ color: '#999'}}>
                     {displayDuration(event.duration)}
                   </small>
