@@ -43,6 +43,7 @@ select {
   border: 1px #cfeeff solid;
   min-width: 80px;
   color: #666;
+  -webkit-appearance: none;
 }
 
 label {
