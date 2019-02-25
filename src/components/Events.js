@@ -63,7 +63,7 @@ const events = ({ events, removeEvent }) => {
                       ret = defaultCategories.filter(dc => dc.value === category)[0].label
                     }
                     if (category === 'head' && event.boobs && event.boobs.length > 0) {
-                      ret += ` (${event.boobs.map(boob => boobs[boob]).join(', ')})`
+                      ret += ` (${event.boobs.length === 1 ? boobs[event.boobs[0]] : '2 boobs'})`
                     }
                     return ret
                   }).join(', ')}
