@@ -105,7 +105,6 @@ button {
   color: #999;
 }
 
-
 .day {
   border-top: 1px #f97592 solid;
   text-align: center;
@@ -113,4 +112,12 @@ button {
   width: 100%;
   padding: 10px;
   font-size: 0.9em;
+}
+
+button.link {
+  background: transparent;
+  width: auto;
+  padding: 0;
+  color: #f97592;
+  outline: 0;
 }
