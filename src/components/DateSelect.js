@@ -56,7 +56,7 @@ const DateSelect = ({ selected, onChange }) => {
   })
 
   const minuteOptions = Array(59).fill().map((_, i) => {
-    const minute = i+1
+    const minute = i
 
     return(
       <option value={minute} key={minute}>
