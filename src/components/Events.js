@@ -1,5 +1,5 @@
 import React from 'react'
-import { defaultCategories } from './Categories'
+import { formatCategories } from './Categories'
 
 const displayDuration = (duration) => {
   if (duration) {
@@ -15,11 +15,6 @@ const displayDuration = (duration) => {
 
     return `${newDuration}`
   }
-}
-
-const boobs = {
-  left: 'Boob gauche',
-  right: 'Boob droit',
 }
 
 const events = ({ events, removeEvent }) => {
@@ -56,22 +51,12 @@ const events = ({ events, removeEvent }) => {
                   </small>
                 </div>
                 <div className='categories'>
-                  {event.categories.map(category => {
-                    let ret = category
-
-                    if (defaultCategories.map(dc => dc.value).includes(category)) {
-                      ret = defaultCategories.filter(dc => dc.value === category)[0].label
-                    }
-                    if (category === 'head' && event.boobs && event.boobs.length > 0) {
-                      ret += ` (${event.boobs.length === 1 ? boobs[event.boobs[0]] : '2 boobs'})`
-                    }
-                    return ret
-                  }).join(', ')}
+                  {formatCategories(event)}
                 </div>
                 <div className='delete'
                   onClick={
                     () => {
-                      if (window.confirm("Supprimer l'évènement ?")) {
+                      if (window.confirm("Supprimer l'événement ?")) {
                         removeEvent(index)
                       }
                     }

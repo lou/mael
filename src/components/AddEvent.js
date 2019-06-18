@@ -23,7 +23,7 @@ const AddEvent = ({ saveEvent, userCategories }) => {
       }}
     >
       <label>
-        <strong>Évènement</strong>
+        <strong>Événement</strong>
       </label>
       <Categories
         defaultValue={event.categories}
@@ -88,7 +88,7 @@ const AddEvent = ({ saveEvent, userCategories }) => {
           selected={event.date ? new Date(event.date) : null}
         />
       )}
-      <button style={{ marginTop: 20 }}>Créer un évènement</button>
+      <button style={{ marginTop: 20 }}>Créer un événement</button>
     </form>
   )
 }
