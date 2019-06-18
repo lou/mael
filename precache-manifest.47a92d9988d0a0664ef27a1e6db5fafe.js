@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "2f85fe3ff1f830bc15f8",
-    "url": "/mael/static/css/main.54262b0d.chunk.css"
+    "revision": "809439883cd5af7aa51e",
+    "url": "/mael/static/css/main.69490064.chunk.css"
   },
   {
-    "revision": "2f85fe3ff1f830bc15f8",
-    "url": "/mael/static/js/main.2f85fe3f.chunk.js"
+    "revision": "809439883cd5af7aa51e",
+    "url": "/mael/static/js/main.80943988.chunk.js"
   },
   {
     "revision": "10f64e82134931e92fb1",
@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/mael/static/media/logo.2c69f090.png"
   },
   {
-    "revision": "5762f96cc5c8b8fa9c7a2885d2416f8d",
+    "revision": "29d4cb29b64ae616be9bb2695b5c43dd",
     "url": "/mael/index.html"
   }
 ];
